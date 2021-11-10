@@ -22,9 +22,6 @@ type Server struct {
 }
 
 func (config Server) Run(ctx context.Context) error {
-	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
-
-	})
 	return config.Serve(ctx, &http.Server{
 		Addr:    config.Bind,
 		Handler: http.DefaultServeMux,
